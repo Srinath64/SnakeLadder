@@ -3,16 +3,16 @@ package com.company;
 public class SnakeLadder {
 
     public static void main(String[] args) {
-
+        int TotalNoOfDiceRoll = 0;
         int playerPosition = 1;
         int diceRoll = 0;
         int SnakeArray[] = { 54, 90, 99 };
         int LadderArray[] = { 9, 40, 67 };
 
+
         System.out.println("Starting Position of the Player = 0");
 
         for (playerPosition = 1; playerPosition <= 100; playerPosition++) {
-
             double randomnumber = (double) (Math.random() * 6);
             diceRoll = (int) randomnumber;
 
@@ -22,6 +22,7 @@ public class SnakeLadder {
             playerPosition = playerPosition - 1;
 
             System.out.println("Current Position =" + " " + playerPosition);
+            TotalNoOfDiceRoll++;
 
             if (playerPosition == 100) {
                 System.out.println("CONGRATULATION!! YOU WON THE GAME.");
@@ -29,6 +30,7 @@ public class SnakeLadder {
 
             if (diceRoll == 0) {
                 playerPosition = playerPosition - diceRoll;
+
                 System.out.println("You have to stay on the same position!!");
             }
 
@@ -71,9 +73,11 @@ public class SnakeLadder {
             } else if (playerPosition > 100) {
                 playerPosition = playerPosition - diceRoll;
 
-                System.out.println("YOU CAN'T JUMP, YOU MUST LAND ON A 100.");
+                System.out.println("OHH!! YOU CAN'T JUMP, YOU MUST LAND ON A 100.");
             }
         }
+        System.out.println("Number of Times The Dice was rolled to Win the Game =" + TotalNoOfDiceRoll);
     }
+
 
 }
