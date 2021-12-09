@@ -12,6 +12,7 @@ public class SnakeLadder {
         System.out.println("Starting Position of the Player = 0");
 
         for (playerPosition = 1; playerPosition <= 100; playerPosition++) {
+
             double randomnumber = (double) (Math.random() * 6);
             diceRoll = (int) randomnumber;
 
@@ -59,13 +60,18 @@ public class SnakeLadder {
                 playerPosition = 64;
 
                 System.out.println("YOU GOT A LADDER.");
-                System.out.println("Now, You are at " + playerPosition + " position.");
+                System.out.println("You are at " + playerPosition + " position.");
 
             } else if (playerPosition == LadderArray[2]) {
                 playerPosition = 86;
 
                 System.out.println("YOU GOT A LADDER.");
                 System.out.println("You are at " + playerPosition + " position.");
+
+            } else if (playerPosition > 100) {
+                playerPosition = playerPosition - diceRoll;
+
+                System.out.println("YOU CAN'T JUMP, YOU MUST LAND ON A 100.");
             }
         }
     }
