@@ -4,14 +4,14 @@ public class SnakeLadder {
 
     public static void main(String[] args) {
 
+        int playerPosition = 1;
         int diceRoll = 0;
         int SnakeArray[] = { 54, 90, 99 };
         int LadderArray[] = { 9, 40, 67 };
 
-
         System.out.println("Starting Position of the Player = 0");
 
-        for (int playerPosition = 1; playerPosition <= 100; playerPosition++) {
+        for (playerPosition = 1; playerPosition <= 100; playerPosition++) {
             double randomnumber = (double) (Math.random() * 6);
             diceRoll = (int) randomnumber;
 
@@ -22,10 +22,12 @@ public class SnakeLadder {
 
             System.out.println("Current Position =" + " " + playerPosition);
 
+            if (playerPosition == 100) {
+                System.out.println("CONGRATULATION!! YOU WON THE GAME.");
+            }
+
             if (diceRoll == 0) {
-
                 playerPosition = playerPosition - diceRoll;
-
                 System.out.println("You have to stay on the same position!!");
             }
 
@@ -45,7 +47,7 @@ public class SnakeLadder {
                 playerPosition = 77;
 
                 System.out.println("IT'S A SNAKE.");
-                System.out.println("Now, You are at " + playerPosition + " position.");
+                System.out.println("You are at " + playerPosition + " position.");
 
             } else if (playerPosition == LadderArray[0]) {
                 playerPosition = 34;
@@ -57,7 +59,7 @@ public class SnakeLadder {
                 playerPosition = 64;
 
                 System.out.println("YOU GOT A LADDER.");
-                System.out.println("You are at " + playerPosition + " position.");
+                System.out.println("Now, You are at " + playerPosition + " position.");
 
             } else if (playerPosition == LadderArray[2]) {
                 playerPosition = 86;
@@ -67,5 +69,5 @@ public class SnakeLadder {
             }
         }
     }
-}
 
+}
